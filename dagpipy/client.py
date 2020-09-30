@@ -3,7 +3,7 @@ from typing import Union
 from requests import post, get
 from simplejson import JSONDecodeError
 
-from dagpipy.models import pokemon, logo, imageurl
+from dagpipy.models import imageurl, games
 from .enums import ImageOptions, Games
 from .exceptions import *
 
@@ -40,16 +40,13 @@ class Client:
     ):
         if not isinstance(url, imageurl.ImageURL):
             url = imageurl.ImageURL(url)
-        _kwargs = {}
+        headers = {'token': self.token, 'url': url}
         for k, v in kwargs.items():
             if not isinstance(v, str):
-                try:
-                    _kwargs[k] = str(v)
-                except:
-                    raise InvalidArgs("Expected str or ImageURL types, got {0.__class__.__name__}".format(v))
+                headers[k] = str(v)
             else:
-                _kwargs[k] = v
-        response = post(urlformatter(option), headers=makeheaders(self.token, str(url), **_kwargs))
+                headers[k] = v
+        response = post(urlformatter(option), headers=headers)
         try:
             data = response.json()
         except JSONDecodeError:
@@ -64,20 +61,16 @@ class Client:
             self,
             option: Games
     ):
-        response = get(urlformatter(option), headers={'token': self.token})
-        try:
-            data = response.json()
-        except Exception as error:
-            raise ResponseError(str(error))
-        error = data.get('error')
+        response = get(urlformatter(option), headers={'token': self.token}).json()
+        error = response.get('error')
         if error:
             raise ResponseError(error)
         lookup = {
-            "wtp": pokemon.Pokemon,
-            "logogame": logo.LogoGame
+            "wtp": games.Pokemon,
+            "logogame": games.LogoGame
         }
         model = lookup.get(option.value)
-        return model(data)
+        return model(response)
 
     def get_qr_code(self, text):
         response = post(urlformatter("qrcode"), headers={"token": self.token, "text": text})
