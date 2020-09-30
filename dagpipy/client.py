@@ -13,18 +13,6 @@ __all__ = (
 
 URL = "https://dagpi.tk/api/{0}"
 
-
-def urlformatter(option):
-    return URL.format(str(option))
-
-
-def makeheaders(token, url, **kwargs):
-    _dict = {'token': token, 'url': url}
-    for key, value in kwargs.items():
-        _dict[key] = value
-    return _dict
-
-
 class Client:
     def __init__(
             self,
@@ -46,7 +34,7 @@ class Client:
                 headers[k] = str(v)
             else:
                 headers[k] = v
-        response = post(urlformatter(option), headers=headers)
+        response = post(URL.format(option), headers=headers)
         try:
             data = response.json()
         except JSONDecodeError:
@@ -61,7 +49,7 @@ class Client:
             self,
             option: Games
     ):
-        response = get(urlformatter(option), headers={'token': self.token}).json()
+        response = get(URL.format(option), headers={'token': self.token}).json()
         error = response.get('error')
         if error:
             raise ResponseError(error)
@@ -73,7 +61,7 @@ class Client:
         return model(response)
 
     def get_qr_code(self, text):
-        response = post(urlformatter("qrcode"), headers={"token": self.token, "text": text})
+        response = post(URL.format("qrcode"), headers={"token": self.token, "text": text})
         try:
             data = response.json()
         except:

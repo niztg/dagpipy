@@ -1,2 +1,2 @@
-from .games import Pokemon, LogoGame
+from .games import *
 from .imageurl import ImageURL
