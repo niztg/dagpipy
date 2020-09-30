@@ -27,7 +27,7 @@ class Client:
             **kwargs  # other stuff
     ):
         if not isinstance(url, ImageURL):
-            url = imageurl.ImageURL(url)
+            url = ImageURL(url)
         headers = {'token': self.token, 'url': url}
         for k, v in kwargs.items():
             if not isinstance(v, str):
