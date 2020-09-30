@@ -3,7 +3,7 @@ from typing import Union
 from requests import post, get
 from simplejson import JSONDecodeError
 
-from dagpipy.models import imageurl, games
+from dagpipy.models import *
 from .enums import ImageOptions, Games
 from .exceptions import *
 
@@ -35,10 +35,10 @@ class Client:
     def get_image(
             self,
             option: ImageOptions,
-            url: Union[imageurl.ImageURL, str],
+            url: Union[ImageURL, str],
             **kwargs  # other stuff
     ):
-        if not isinstance(url, imageurl.ImageURL):
+        if not isinstance(url, ImageURL):
             url = imageurl.ImageURL(url)
         headers = {'token': self.token, 'url': url}
         for k, v in kwargs.items():
@@ -66,8 +66,8 @@ class Client:
         if error:
             raise ResponseError(error)
         lookup = {
-            "wtp": games.Pokemon,
-            "logogame": games.LogoGame
+            "wtp": Pokemon,
+            "logogame": LogoGame
         }
         model = lookup.get(option.value)
         return model(response)

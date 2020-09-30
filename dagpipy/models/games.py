@@ -1,3 +1,8 @@
+__all__ = (
+    'Pokemon',
+    'LogoGame'
+)
+
 class Pokemon:
     def __init__(self, data: dict):
         self.question = data.get('question_image')
