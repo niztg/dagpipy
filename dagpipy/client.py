@@ -1,6 +1,6 @@
 from typing import Union
 
-from requests import post, get
+from requests import post, get, exceptions as request_exc
 from simplejson import JSONDecodeError
 
 from dagpipy.models import *
@@ -12,6 +12,7 @@ __all__ = (
 )
 
 URL = "https://dagpi.tk/api/{0}"
+
 
 class Client:
     def __init__(
@@ -28,16 +29,15 @@ class Client:
     ):
         if not isinstance(url, ImageURL):
             url = ImageURL(url)
-        response = post(URL.format(option), headers=dict(token=self.token, url=str(url), **kwargs))
         try:
-            data = response.json()
-        except JSONDecodeError:
+            response = post(URL.format(option), headers=dict(token=self.token, url=str(url), **kwargs)).json()
+        except:
             raise InvalidArgs()
-        error = data.get('error')
+        error = response.get('error')
         if error:
             raise ResponseError(str(error))
 
-        return data.get('url')
+        return response.get('url')
 
     def get_game(
             self,
