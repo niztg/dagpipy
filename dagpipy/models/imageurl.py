@@ -17,7 +17,7 @@ class ImageURL(str):
             r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
             r"(?::\d+)?"
             r"(?:/?|[/?]\S+)$", re.IGNORECASE)
-        if not re.match(regex, c) is not None:
+        if not re.match(regex, c):
             raise InvalidImageURL()
         else:
             if not any(a in c for a in ['.png', '.jpg', '.jpeg', '.gif']):

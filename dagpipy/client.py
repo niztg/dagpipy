@@ -30,10 +30,7 @@ class Client:
             url = ImageURL(url)
         headers = {'token': self.token, 'url': url}
         for k, v in kwargs.items():
-            if not isinstance(v, str):
-                headers[k] = str(v)
-            else:
-                headers[k] = v
+            headers[k] = str(v)
         response = post(URL.format(option), headers=headers)
         try:
             data = response.json()
