@@ -28,7 +28,7 @@ class Client:
     ):
         if not isinstance(url, ImageURL):
             url = ImageURL(url)
-        response = post(URL.format(option), headers=dict(token=self.token, url=url, **kwargs))
+        response = post(URL.format(option), headers=dict(token=self.token, url=str(url), **kwargs))
         try:
             data = response.json()
         except JSONDecodeError:
