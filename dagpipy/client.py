@@ -1,7 +1,6 @@
 from typing import Union
 
-from requests import post, get, exceptions as request_exc
-from simplejson import JSONDecodeError
+from requests import post, getg
 
 from dagpipy.models import *
 from .enums import ImageOptions, Games
@@ -64,4 +63,4 @@ class Client:
         if error:
             raise ResponseError(str(error))
 
-        return data.get('url')
+        return data.get('detail')

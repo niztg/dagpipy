@@ -10,3 +10,4 @@ whyareyougay = client.get_image(
     url=url,
 )
 print(whyareyougay)
+
