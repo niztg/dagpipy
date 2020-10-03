@@ -1,6 +1,6 @@
 from typing import Union
 
-from requests import post, getg
+from requests import Session
 
 from dagpipy.models import *
 from .enums import ImageOptions, Games
@@ -13,11 +13,12 @@ __all__ = (
 URL = "https://dagpi.tk/api/{0}"
 
 
-class Client:
+class Client(Session):
     def __init__(
             self,
             token: str,
     ):
+        super().__init__()
         self.token = token
 
     def get_image(
@@ -29,7 +30,8 @@ class Client:
         if not isinstance(url, ImageURL):
             url = ImageURL(url)
         try:
-            response = post(URL.format(option), headers=dict(token=self.token, url=str(url), **kwargs)).json()
+            response = self.post(URL.format(option), headers=dict(token=self.token, url=str(url), **kwargs))\
+                .json()
         except:
             raise InvalidArgs()
         error = response.get('error')
@@ -42,7 +44,7 @@ class Client:
             self,
             option: Games
     ):
-        response = get(URL.format(option), headers={'token': self.token}).json()
+        response = self.get(URL.format(option), headers=dict(token=self.token)).json()
         error = response.get('error')
         if error:
             raise ResponseError(error)
@@ -54,7 +56,7 @@ class Client:
         return model(response)
 
     def get_qr_code(self, text):
-        response = post(URL.format("qrcode"), headers={"token": self.token, "text": text})
+        response = self.post(URL.format("qrcode"), headers=dict(token=self.token, text=text))
         try:
             data = response.json()
         except:

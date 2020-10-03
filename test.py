@@ -3,8 +3,7 @@ from secrets import TOKEN
 
 client = dagpipy.Client(TOKEN)
 
-url = dagpipy.ImageURL(
-    "https://cdn.discordapp.com/avatars/731228973001867304/0e587564754286e061716f57713449b9.png?size=1024")
+url = dagpipy.ImageURL("https://t8x8a5p2.stackpathcdn.com/wp-content/uploads/2018/05/Birthday-Cake-Recipe-Image-720x720.jpg")
 whyareyougay = client.get_image(
     dagpipy.ImageOptions.bad,
     url=url,
