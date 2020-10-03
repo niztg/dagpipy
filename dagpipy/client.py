@@ -25,7 +25,7 @@ class Client(Session):
             self,
             option: ImageOptions,
             url: Union[ImageURL, str],
-            **kwargs  # other stuffg
+            **kwargs  # other stuff
     ):
         if not isinstance(url, ImageURL):
             url = ImageURL(url)
