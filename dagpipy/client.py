@@ -27,15 +27,16 @@ class Client(Session):
             url: Union[ImageURL, str],
             **kwargs  # other stuff
     ):
-        if not isinstance(url, ImageURL):
-            url = ImageURL(url)
         try:
-            response = self.post(URL.format(option), headers=dict(token=self.token, url=str(url), **kwargs)).json()
+            response = self.post(
+                url=URL.format(option),
+                headers=dict(token=self.token, url=str(ImageURL(url)), **kwargs)
+            ).json()
         except:
             raise InvalidArgs()
         error = response.get('error')
         if error:
-            raise ResponseError(str(error))
+            raise ResponseError(error)
 
         return response.get('url')
 
@@ -43,7 +44,10 @@ class Client(Session):
             self,
             option: Games
     ):
-        response = self.get(URL.format(option), headers=dict(token=self.token)).json()
+        response = self.get(
+            url=URL.format(option),
+            headers=dict(token=self.token)
+        ).json()
         error = response.get('error')
         if error:
             raise ResponseError(error)
@@ -55,13 +59,15 @@ class Client(Session):
         return model(response)
 
     def get_qr_code(self, text):
-        response = self.post(URL.format("qrcode"), headers=dict(token=self.token, text=text))
         try:
-            data = response.json()
+            response = self.post(
+                url=URL.format("qrcode"),
+                headers=dict(token=self.token, text=text)
+            ).json()
         except:
             raise InvalidArgs()
-        error = data.get('error')
+        error = response.get('error')
         if error:
-            raise ResponseError(str(error))
+            raise ResponseError(error)
 
-        return data.get('detail')
+        return response.get('detail')
