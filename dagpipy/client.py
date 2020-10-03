@@ -25,13 +25,12 @@ class Client(Session):
             self,
             option: ImageOptions,
             url: Union[ImageURL, str],
-            **kwargs  # other stuff
+            **kwargs  # other stuffg
     ):
         if not isinstance(url, ImageURL):
             url = ImageURL(url)
         try:
-            response = self.post(URL.format(option), headers=dict(token=self.token, url=str(url), **kwargs))\
-                .json()
+            response = self.post(URL.format(option), headers=dict(token=self.token, url=str(url), **kwargs)).json()
         except:
             raise InvalidArgs()
         error = response.get('error')
