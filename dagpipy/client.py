@@ -2,7 +2,7 @@ from typing import Union
 
 from requests import get, post
 
-from dagpipy.models import *
+from .models import *
 from .enums import ImageOptions, Games
 from .exceptions import *
 
