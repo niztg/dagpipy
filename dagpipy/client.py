@@ -1,6 +1,6 @@
 from typing import Union
 
-from requests import get, post
+from requests import Session
 
 from .models import *
 from .enums import ImageOptions, Games
@@ -11,6 +11,8 @@ __all__ = (
 )
 
 URL = "https://dagpi.tk/api/{0}"
+SESSION = Session()
+
 
 
 class Client:
@@ -28,7 +30,7 @@ class Client:
             **kwargs  # other stuff
     ):
         try:
-            response = post(
+            response = SESSION.post(
                 url=URL.format(option),
                 headers=dict(token=self.token, url=str(ImageURL(url)), **kwargs)
             ).json()
@@ -44,7 +46,7 @@ class Client:
             self,
             option: Games
     ):
-        response = get(
+        response = SESSION.get(
             url=URL.format(option),
             headers=dict(token=self.token)
         ).json()
@@ -60,7 +62,7 @@ class Client:
 
     def get_qr_code(self, text):
         try:
-            response = post(
+            response = SESSION.post(
                 url=URL.format("qrcode"),
                 headers=dict(token=self.token, text=text)
             ).json()
