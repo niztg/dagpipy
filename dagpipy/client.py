@@ -10,9 +10,8 @@ __all__ = (
     'Client'
 )
 
-URL = "https://dagpi.tk/api/{0}"
+URL = "https://api.dagpi.xyz/{0}"
 SESSION = Session()
-
 
 
 class Client:
@@ -31,7 +30,7 @@ class Client:
     ):
         try:
             response = SESSION.post(
-                url=URL.format(option),
+                url=URL.format("image/{}".format(option)),
                 headers=dict(token=self.token, url=str(ImageURL(url)), **kwargs)
             ).json()
         except:
@@ -59,17 +58,3 @@ class Client:
         }
         model = lookup.get(option.value)
         return model(response)
-
-    def get_qr_code(self, text):
-        try:
-            response = SESSION.post(
-                url=URL.format("qrcode"),
-                headers=dict(token=self.token, text=text)
-            ).json()
-        except:
-            raise InvalidArgs()
-        error = response.get('error')
-        if error:
-            raise ResponseError(error)
-
-        return response.get('detail')
