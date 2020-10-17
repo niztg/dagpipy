@@ -10,7 +10,7 @@ url = dagpipy.ImageURL(
 
 bad = client.get_image(
     option=dagpipy.ImageOptions.bad,
-    url=url
+    url=url,
 )
 
 bad_image = Image.open(bad)

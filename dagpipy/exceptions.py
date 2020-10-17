@@ -1,7 +1,8 @@
 __all__ = (
     'InvalidArgs',
     'InvalidImageURL',
-    'ResponseError'
+    'ResponseError',
+    'InvalidToken'
 )
 
 
@@ -24,6 +25,14 @@ class InvalidImageURL(Exception):
 
 class ResponseError(Exception):
     def __init__(self, message):
+        self.message = message
+
+    def __str__(self):
+        return self.message
+
+
+class InvalidToken(Exception):
+    def __init__(self, message="You have passed in an incorrect token"):
         self.message = message
 
     def __str__(self):
