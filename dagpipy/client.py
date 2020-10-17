@@ -11,7 +11,7 @@ __all__ = (
     'Client'
 )
 
-URL = "https://api.dagpi.xyz/{0}"
+URL = "https://api.dagpi.xyz/{type}/{option}"
 ERRORS = {
     403: InvalidToken(),
     413: InvalidArgs('The image you passed in was too large!'),
@@ -37,7 +37,7 @@ class Client:
             **kwargs  # other stuff
     ):
         response = get(
-            url=URL.format("image/{0}/".format(option)),
+            url=URL.format(type="image", option=f"{option}/"),
             params=dict(url=str(ImageURL(url)), **kwargs),
             headers={'Authorization': self.auth}
         )
@@ -51,9 +51,9 @@ class Client:
             option: Games
     ):
         response = get(
-            url=URL.format("data/{0}".format(option)),
+            url=URL.format(type="data", option=option),
             headers={"Authorization": self.auth}
-        ).json()
+        )
         error = ERRORS.get(response.status_code)
         if error:
             raise error
@@ -66,4 +66,4 @@ class Client:
             "joke": Joke
         }
         model = lookup.get(str(option))
-        return model(response)
+        return model(response.json())
