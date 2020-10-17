@@ -1,6 +1,6 @@
 # dagpipy
 A Python API Wrapper for https://dagpi.xyz/, the fast and free image API.<br>
-[`dagpipy docs`]() • [`dagpi docs`](https://dagpi.docs.apiary.io/#reference) • [`examples`](https://github.com/niztg/dagpipy/blob/master/examples.py)
+[`dagpipy docs`](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md) • [`dagpi docs`](https://dagpi.docs.apiary.io/#reference) • [`examples`](https://github.com/niztg/dagpipy/blob/master/examples.py)
 
 ### Getting a token
 - Go to https://dagpi.xyz/dashboard
