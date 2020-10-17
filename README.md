@@ -139,8 +139,8 @@ print(joke.joke)
 
 ##### Returns:<br>
 ```py
-12957
-Can't sleep. Boss is watching.
+41914
+What do you call a midget physic that has escaped from prison?? A small medium at large
 ```
 
 Consult the docs for more information on how to use this module!
