@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, Any
 
 from requests import get
 from io import BytesIO
@@ -35,7 +35,7 @@ class Client:
             option: ImageOptions,
             url: Union[ImageURL, str],
             **kwargs  # other stuff
-    ):
+    ) -> BytesIO:
         response = get(
             url=URL.format(type="image", option=f"{option}/"),
             params=dict(url=str(ImageURL(url)), **kwargs),
@@ -49,7 +49,7 @@ class Client:
     def get_game(
             self,
             option: Games
-    ):
+    ) -> Any:
         response = get(
             url=URL.format(type="data", option=option),
             headers={"Authorization": self.auth}
@@ -63,7 +63,8 @@ class Client:
             "roast": Roast,
             "yomama": YoMama,
             "pickupline": PickupLine,
-            "joke": Joke
+            "joke": Joke,
+            "waifu": None # make this model and then pip time
         }
         model = lookup.get(str(option))
         return model(response.json())
