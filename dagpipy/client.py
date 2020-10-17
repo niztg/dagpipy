@@ -37,7 +37,7 @@ class Client:
             **kwargs  # other stuff
     ) -> BytesIO:
         response = get(
-            url=URL.format(type="image", option=f"{option}/"),
+            url=URL.format(type="image", option=option),
             params=dict(url=str(ImageURL(url)), **kwargs),
             headers={'Authorization': self.auth}
         )
