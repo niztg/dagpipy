@@ -76,3 +76,8 @@ class Joke:
 
     def __repr__(self):
         return self.joke
+
+
+class Waifu:
+    def __init__(self):
+        pass
