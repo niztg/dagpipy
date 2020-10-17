@@ -1,6 +1,6 @@
 # dagpipy
-A Python API Wrapper for https://dagpi.xyz/, the fast and free image API.
-[`dagpipy docs`]() • [`dagpi docs`]() • [`examples`]()
+A Python API Wrapper for https://dagpi.xyz/, the fast and free image API.<br>
+[`dagpipy docs`]() • [`dagpi docs`](https://dagpi.docs.apiary.io/#reference) • [`examples`](https://github.com/niztg/dagpipy/blob/master/examples.py)
 
 ### Getting a token
 - Go to https://dagpi.xyz/dashboard
@@ -142,3 +142,5 @@ print(joke.joke)
 12957
 Can't sleep. Boss is watching.
 ```
+
+Consult the docs for more information on how to use this module!
