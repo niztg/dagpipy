@@ -1,6 +1,7 @@
 from typing import Union
 
-from requests import Session
+from requests import get
+from io import BytesIO
 
 from .models import *
 from .enums import ImageOptions, Games
@@ -11,7 +12,6 @@ __all__ = (
 )
 
 URL = "https://api.dagpi.xyz/{0}"
-SESSION = Session()
 
 
 class Client:
@@ -19,7 +19,6 @@ class Client:
             self,
             token: str,
     ):
-        super().__init__()
         self.token = token
 
     def get_image(
@@ -28,33 +27,34 @@ class Client:
             url: Union[ImageURL, str],
             **kwargs  # other stuff
     ):
+        response = get(
+            url=URL.format("image/{0}/".format(option)),
+            params=dict(url=str(ImageURL(url)), **kwargs),
+            headers={'Authorization': self.token}
+        )
         try:
-            response = SESSION.post(
-                url=URL.format("image/{}".format(option)),
-                headers=dict(token=self.token, url=str(ImageURL(url)), **kwargs)
-            ).json()
-        except:
-            raise InvalidArgs()
-        error = response.get('error')
-        if error:
-            raise ResponseError(error)
-
-        return response.get('url')
+            return BytesIO(response.content)
+        except Exception as error:
+            raise InvalidArgs() from error
 
     def get_game(
             self,
             option: Games
     ):
-        response = SESSION.get(
-            url=URL.format(option),
-            headers=dict(token=self.token)
+        response = get(
+            url=URL.format("data/{0}".format(option)),
+            headers={"Authorization": self.token}
         ).json()
         error = response.get('error')
         if error:
             raise ResponseError(error)
         lookup = {
             "wtp": Pokemon,
-            "logogame": LogoGame
+            "logogame": LogoGame,
+            "roast": Roast,
+            "yomama": YoMama,
+            "pickupline": PickupLine,
+            "joke": Joke
         }
-        model = lookup.get(option.value)
+        model = lookup.get(str(option))
         return model(response)

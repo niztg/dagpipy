@@ -1,22 +1,27 @@
 __all__ = (
     'Pokemon',
-    'LogoGame'
+    'LogoGame',
+    'Roast',
+    'YoMama',
+    'PickupLine',
+    'Joke'
 )
 
 
 class Pokemon:
     def __init__(self, data: dict):
-        self.question = data.get('question_image')
-        self.answer = data.get('answer_image')
-        pokemon = data.get('pokemon')
-        self.abilities = pokemon.get('abilities')
-        self.ascii = pokemon.get('ascii')
-        self.height = pokemon.get('height')
-        self.id = pokemon.get('id')
-        self.link = pokemon.get('link')
-        self.name = pokemon.get('name')
-        self.types = pokemon.get('types')
-        self.weight = pokemon.get('weight')
+        DATA = data['Data']
+        self.data = data
+        self.types = DATA.get('Type')
+        self.abilities = DATA.get('abilities')
+        self.ascii = DATA.get('ascii')
+        self.height = DATA.get('height')
+        self.id = int(DATA.get('id'))
+        self.link = DATA.get('link')
+        self.name = DATA.get('name')
+        self.weight = DATA.get('weight')
+        self.answer = data.get('answer')
+        self.question = data.get('question')
 
     def __repr__(self):
         return self.question
@@ -37,3 +42,37 @@ class LogoGame:
 
     def __repr__(self):
         return self.question
+
+
+class Roast:
+    def __init__(self, data: dict):
+        self.roast = data.get('roast')
+
+    def __repr__(self):
+        return self.roast
+
+
+class YoMama:
+    def __init__(self, data: dict):
+        self.description = data.get('description')
+
+    def __repr__(self):
+        return self.description
+
+
+class PickupLine:
+    def __init__(self, data: dict):
+        self.category = data.get('category')
+        self.joke = data.get('joke')
+
+    def __repr__(self):
+        return self.joke
+
+
+class Joke:
+    def __init__(self, data: dict):
+        self.id = data.get('id')
+        self.joke = data.get('joke')
+
+    def __repr__(self):
+        return self.joke

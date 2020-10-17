@@ -7,7 +7,7 @@ __all__ = (
 
 class InvalidArgs(Exception):
     def __init__(self, message="You have passed in invalid arguments! Please refer to the documentation for more info:"
-                               "https://dagpi.tk/docs"):
+                               "https://dagpi.docs.apiary.io/#reference/images-api"):
         self.message = message
 
     def __str__(self):
