@@ -50,3 +50,5 @@ joke = client.get_game(
 )
 print(joke.id)
 print(joke.joke)
+
+print(client.get_game(option=dagpipy.Games.waifu).appearances)

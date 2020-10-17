@@ -64,7 +64,7 @@ class Client:
             "yomama": YoMama,
             "pickupline": PickupLine,
             "joke": Joke,
-            "waifu": None # make this model and then pip time
+            "waifu": Waifu
         }
         model = lookup.get(str(option))
         return model(response.json())

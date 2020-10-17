@@ -4,7 +4,8 @@ __all__ = (
     'Roast',
     'YoMama',
     'PickupLine',
-    'Joke'
+    'Joke',
+    'Waifu'
 )
 
 
@@ -78,6 +79,73 @@ class Joke:
         return self.joke
 
 
+class Series:
+    def __init__(self, data: dict):
+        self.airing_end = data.get('airing_end')
+        self.airing_start = data.get('airing_start')
+        self.description = data.get('description')
+        self.display_picture = data.get('display_picture')
+        self.name = data.get('name')
+        self.original_name = data.get('original_name')
+        self.release = data.get('release')
+        self.romaji_name = data.get('romaji_name')
+        self.slug = data.get('slug')
+        self.studio = data.get('studio')
+
+    def __repr__(self):
+        return self.name
+
+
+class Creator:
+    def __init__(self, data: dict):
+        self.name = data.get('name')
+        self.id = data.get('id')
+
+    def __repr__(self):
+        return self.name
+
+
 class Waifu:
-    def __init__(self):
-        pass
+    def __init__(self, data: dict):
+        self.data = data
+        self.age = data.get('age')
+        self.birthday_day = data.get('birthday_day')
+        self.birthday_month = data.get('birthday_month')
+        self.blood_type = data.get('blood_type')
+        self.bust = data.get('bust')
+        self.description = data.get('description')
+        self.display_picture = data.get('display_picture')
+        self.height = data.get('height')
+        self.hip = data.get('hip')
+        self.husbando = data.get('husbando')
+        self.id = data.get('id')
+        self.like_rank = data.get('like_rank')
+        self.likes = data.get('likes')
+        self.name = data.get('name')
+        self.nsfw = data.get('nsfw')
+        self.origin = data.get('origin')
+        self.original_name = data.get('original_name')
+        self.popularity_rank = data.get('popularity_rank')
+        self.romaji_name = data.get('romaji_name')
+        self.slug = data.get('slug')
+        self.tags = data.get('tags')
+        self.trash = data.get('trash')
+        self.trash_rank = data.get('trash_rank')
+        self.url = data.get('url')
+        self.waist = data.get('waist')
+        self.weight = data.get('weight')
+
+    def __repr__(self):
+        return f"{self.name}: {self.description}"
+        
+    @property
+    def creator(self):
+        return Creator(self.data.get('creator'))
+
+    @property
+    def series(self):
+        return Series(self.data.get('series'))
+
+    @property
+    def appearances(self):
+        return [Series(d) for d in self.data.get('appearances')]
