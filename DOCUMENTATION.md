@@ -5,8 +5,8 @@ A Python API Wrapper for https://dagpi.xyz/, the fast and free image API.
 - [Client](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#client)
 - [ImageURL](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#imageurl)
 - [Enums](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#enums)
-- [Objects]()
-- [Exceptions]()
+- [Objects](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#objects)
+- [Exceptions](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exceptions)
 
 
 # Client
@@ -22,16 +22,16 @@ Get an image from the Image API
 **Parameters:**<br>
 `option` ([ImageOptions](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyimageoptions)): The image option you want to retrieve<br>
 `url` (Union\[str, [ImageURL](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#imageurl)]): The url of the image you want to manipulate<br>
-`**kwargs` (Optional): The parameters used in the API request. These vary depending on the `option` param. See the [ImageOptions]() or [dagpi](https://dagpi.docs.apiary.io/#reference/images-api) docs to see what these are for each specific case.
+`**kwargs` (Optional): The parameters used in the API request. These vary depending on the `option` param. See the [ImageOptions](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyimageoptions) or [dagpi](https://dagpi.docs.apiary.io/#reference/images-api) docs to see what these are for each specific case.
 
 **Return type:**<br>
 [io.BytesIO](https://docs.python.org/3/library/io.html#io.BytesIO)
 
 **Raises:**<br>
-[InvalidToken](): If your token was invalid.<br>
-[InvalidImageURL](): If the image url you passed in was invalid.<br>
-[InvalidArgs](): If you passed in invalid kwargs for the given option parameter, or if your image was too big.<br>
-[ResponseError](): If you are being rate limited, or there is an internal server error.<br>
+[InvalidToken](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exception-dagpipyinvalidtoken): If your token was invalid.<br>
+[InvalidImageURL](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exception-dagpipyinvalidargs): If the image url you passed in was invalid.<br>
+[InvalidArgs](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exception-dagpipyresponseerror): If you passed in invalid kwargs for the given option parameter, or if your image was too big.<br>
+[ResponseError](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exception-dagpipyinvalidimageurl): If you are being rate limited, or there is an internal server error.<br>
 
 **Examples:**<br>
 ```py
@@ -80,10 +80,10 @@ Get an object from the Data API
 `option` ([Games](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipygames)): The object you want to retrieve. 
 
 **Return type:**<br>
-Union\[[Pokemon](), [LogoGame](), [Roast](), [YoMama](), [PickupLine](), [Joke](), [Waifu]()]
+Union\[[Pokemon](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipypokemon), [LogoGame](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipylogogame), [Roast](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyroast), [YoMama](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyyomama), [PickupLine](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipypickupline), [Joke](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyjoke), [Waifu](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipywaifu)]
 
 **Raises:**<br>
-[InvalidToken](): If your token was invalid
+[InvalidToken](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exception-dagpipyinvalidtoken): If your token was invalid
 
 **Examples:**<br>
 ```py
@@ -115,7 +115,7 @@ Class that validates image urls.
 `url` (str): An image url
 
 **Raises:**<br>
-[InvalidImageURL](): When the image url you passed in was invalid.
+[InvalidImageURL](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exception-dagpipyinvalidimageurl): When the image url you passed in was invalid.
 
 
 # Enums
@@ -500,7 +500,7 @@ client.get_image(
 The `option` parameter in the [Client.get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption) function. 
 
 ### whos_that_pokemon
-Returns the [Pokemon]() object when used
+Returns the [Pokemon](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipypokemon) object when used
 
 **Example:**
 ```py
@@ -510,7 +510,7 @@ client.get_game(
 ```
 
 ### logo_guessing
-Returns the [LogoGame]() object when used
+Returns the [LogoGame](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipylogogame) object when used
 
 **Example:**
 ```py
@@ -520,7 +520,7 @@ client.get_game(
 ```
 
 ### roast
-Returns the [Roast]() object when used
+Returns the [Roast](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyroast) object when used
 
 **Example:**
 ```py
@@ -531,7 +531,7 @@ client.get_game(
 
 
 ### yo_mama
-Returns the [YoMama]() object when used
+Returns the [YoMama](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyyomama) object when used
 
 **Example:**
 ```py
@@ -541,7 +541,7 @@ client.get_game(
 ```
 
 ### pickupline
-Returns the [PickupLine]() object when used
+Returns the [PickupLine](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipypickupline) object when used
 
 **Example:**
 ```py
@@ -551,7 +551,7 @@ client.get_game(
 ```
 
 ### waifu
-Returns the [Waifu]() object when used
+Returns the [Waifu](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipywaifu) object when used
 
 **Example:**
 ```py
@@ -562,7 +562,7 @@ client.get_game(
 
 
 ### joke
-Returns the [Joke]() object when used
+Returns the [Joke](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyjoke) object when used
 
 **Example:**
 ```py
