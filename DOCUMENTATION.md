@@ -3,10 +3,27 @@ A Python API Wrapper for https://dagpi.xyz/, the fast and free image API.
 
 #### Table of Contents:
 - [Client](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#client)
+    - [get_image](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_imageoption-url-kwargs)
+    - [get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption)
 - [ImageURL](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#imageurl)
 - [Enums](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#enums)
+    - [ImageOptions](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyimageoptions)
+    - [Games](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipygames)
 - [Objects](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#objects)
+    - [Pokemon](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipypokemon)
+    - [LogoGame](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipylogogame)
+    - [Roast](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyroast)
+    - [YoMama](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyyomama)
+    - [PickupLine](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipypickupline)
+    - [Joke](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyjoke)
+    - [Waifu](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipywaifu)
+    - [Series](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyseries)
+    - [Creator](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipycreator)
 - [Exceptions](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exceptions)
+    - [InvalidToken](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exception-dagpipyinvalidtoken)
+    - [InvalidArgs](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exception-dagpipyinvalidargs)
+    - [ResponseError](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exception-dagpipyresponseerror)
+    - [InvalidImageURL](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#exception-dagpipyinvalidimageurl)
 
 
 # Client
@@ -1027,3 +1044,4 @@ Raised when there's an error with the API or you are being rate limited. (429, 5
 ## <em>exception</em> dagpipy.InvalidImageURL
 Raised when you pass in an invalid image url
 
+### [Back to the top](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md)
