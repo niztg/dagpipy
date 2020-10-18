@@ -2,7 +2,7 @@
 A Python API Wrapper for https://dagpi.xyz/, the fast and free image API.
 
 #### Table of Contents:
-- [Client]()
+- [Client](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#client)
 - [ImageURL]()
 - [Enums]()
 - [Objects]()
@@ -10,7 +10,7 @@ A Python API Wrapper for https://dagpi.xyz/, the fast and free image API.
 
 
 # Client
-<h2><em>class</em> dagpipy.<strong>Client</strong>(<em>token</em>)</h2>
+<h2><em>class</em> dagpipy.Client(<em>token</em>)</h2>
 The Client class which interacts with the API itself. 
 
 <br>**Paramters:**<br>
@@ -28,7 +28,8 @@ Get an image from the Image API
 [io.BytesIO](https://docs.python.org/3/library/io.html#io.BytesIO)
 
 **Raises:**<br>
-[InvalidToken](): If your token was invalid<br>
+[InvalidToken](): If your token was invalid.<br>
+[InvalidImageURL](): If the image url you passed in was invalid.<br>
 [InvalidArgs](): If you passed in invalid kwargs for the given option parameter, or if your image was too big.<br>
 [ResponseError](): If you are being rate limited, or there is an internal server error.<br>
 
@@ -103,3 +104,15 @@ joke = client.get_game(
 print(joke.id)
 print(joke.joke)
 ```
+
+<hr>
+
+# ImageURL
+<h2><em>class</em> dagpipy.ImageURL(<em>url</em>)</h2>
+Class that validates image urls.
+
+<br>**Parameters:**<br>
+`url` (str): An image url
+
+**Raises:**<br>
+[InvalidImageURL](): When the image url you passed in was invalid.
