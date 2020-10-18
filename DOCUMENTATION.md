@@ -495,3 +495,78 @@ client.get_image(
     url2=url
 )
 ```
+
+## <em>class</em> dagpipy.Games
+The `option` parameter in the [Client.get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption) function. 
+
+### whos_that_pokemon
+Returns the [Pokemon]() object when used
+
+**Example:**
+```py
+client.get_game(
+    option=dagpipy.ImageOptions.whos_that_pokemon,
+)
+```
+
+### logo_guessing
+Returns the [LogoGame]() object when used
+
+**Example:**
+```py
+client.get_game(
+    option=dagpipy.ImageOptions.logo_guessing,
+)
+```
+
+### roast
+Returns the [Roast]() object when used
+
+**Example:**
+```py
+client.get_game(
+    option=dagpipy.ImageOptions.roast,
+)
+```
+
+
+### yo_mama
+Returns the [YoMama]() object when used
+
+**Example:**
+```py
+client.get_game(
+    option=dagpipy.ImageOptions.yo_mama,
+)
+```
+
+### pickupline
+Returns the [PickupLine]() object when used
+
+**Example:**
+```py
+client.get_game(
+    option=dagpipy.ImageOptions.pickupline,
+)
+```
+
+### waifu
+Returns the [Waifu]() object when used
+
+**Example:**
+```py
+client.get_game(
+    option=dagpipy.ImageOptions.waifu,
+)
+```
+
+
+### joke
+Returns the [Joke]() object when used
+
+**Example:**
+```py
+client.get_game(
+    option=dagpipy.ImageOptions.joke,
+)
+```
