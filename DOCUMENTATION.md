@@ -20,7 +20,7 @@ The Client class which interacts with the API itself.
 Get an image from the Image API
 
 **Parameters:**<br>
-`option` ([ImageOptions]()): The image option you want to retrieve<br>
+`option` ([ImageOptions](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipyimageoptions)): The image option you want to retrieve<br>
 `url` (Union\[str, [ImageURL](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#imageurl)]): The url of the image you want to manipulate<br>
 `**kwargs` (Optional): The parameters used in the API request. These vary depending on the `option` param. See the [ImageOptions]() or [dagpi](https://dagpi.docs.apiary.io/#reference/images-api) docs to see what these are for each specific case.
 
@@ -120,7 +120,7 @@ Class that validates image urls.
 
 # Enums
 ## <em>class</em> dagpipy.ImageOptions
-The `option` param used in the [Client.get_image]() function.
+The `option` param used in the [Client.get_image](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_imageoption-url-kwargs) function.
 
 ### wanted
 For a wanted image
