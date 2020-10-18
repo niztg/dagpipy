@@ -4,9 +4,12 @@ setup(
     name='dagpipy',
     author='niztg',
     url='https://github.com/niztg/dagpipy',
-    version='1.0.1',
+    version='1.1.1',
     license='MIT',
-    project_urls={'Discord Server': 'https://discord.com/invite/2fxKxJH'},
+    project_urls={
+        'Discord Server': 'https://discord.com/invite/2fxKxJH',
+        'Documentation': 'https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md'
+    },
     description='A Python API Wrapper for https://dagpi.xyz/, the fast and free image API.',
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
