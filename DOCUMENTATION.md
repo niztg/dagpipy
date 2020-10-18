@@ -949,7 +949,7 @@ Returns the series of the waifu
 **Type:**<br>
 [dagpipy.Series]()
 
-### series
+### appearances
 Returns a list of series the waifu was in
 
 **Type:**<br>
