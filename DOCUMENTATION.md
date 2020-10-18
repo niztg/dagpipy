@@ -206,6 +206,19 @@ image = client.get_image(
 )
 ```
 
+### whyareyougay
+You are gay
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.whyareyougay,
+    url=url,
+    url2=url2
+)
+```
+
+
 ### invert
 Invert an image
 
