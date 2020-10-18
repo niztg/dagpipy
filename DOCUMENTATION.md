@@ -570,3 +570,430 @@ client.get_game(
     option=dagpipy.ImageOptions.joke,
 )
 ```
+
+# Objects
+The objects that can be returned in the [Client.get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption) function. You can not access or instantiate these objects.
+
+## <em>class</em> dagpipy.Pokemon
+The object returned when using [Games.whos_that_pokemon](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#whos_that_pokemon) as the option param in [Client.get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption)
+
+**Supported Operations:**<br>
+str(x): Returns the question image
+
+### question
+The question image
+
+**Type:**<br>
+str
+
+### answer
+The answer image
+
+**Type:**<br>
+str
+
+### name
+The Pokemon's name
+
+**Type:**<br>
+str
+
+### types
+The Pokemon's types 
+
+**Type:**<br>
+list
+
+### abilities
+The Pokemon's abilities
+
+**Type:**<br>
+list
+
+### ascii
+An ascii drawing of the Pokemon
+
+**Type:**<br>
+str
+
+### id
+The pokedex number of the Pokemon
+
+**Type:**<br>
+int
+
+### link
+An ascii drawing of the Pokemon
+
+**Type:**<br>
+str
+
+### weight
+The pokemon's weight
+
+**Type:**<br>
+float
+
+### height
+The pokemon's height
+
+**Type:**<br>
+float
+
+### data
+The raw dict data
+
+**Type:**<br>
+dict
+
+**Example:**
+```py
+wtp = client.get_game(
+    option=dagpipy.Games.whos_that_pokemon
+)
+print(wtp.name)
+print(wtp.question)
+print(wtp.answer)
+print(wtp.types)
+print(wtp.abilities)
+print(wtp.ascii)
+```
+
+## <em>class</em> dagpipy.LogoGame
+The object returned when using [Games.logogame](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#logo_guessing) as the option param in [Client.get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption)
+
+**Supported Operations:**<br>
+str(x): The question image
+
+### question
+The question image
+
+**Type:**<br>
+str
+
+### answer
+The answer image
+
+**Type:**<br>
+str
+
+### brand
+The brand name
+
+**Type:**<br>
+str
+
+### wiki
+A wiki url of the brand
+
+**Type:**<br>
+str
+
+### hint
+A hint of the brand
+
+**Type:**<br>
+str
+
+### clue
+A clue of the brand
+
+**Type:**<br>
+str
+
+
+### difficulty
+The difficulty of the question. Could be easy or hard
+
+**Type:**<br>
+str
+
+**Example:**<br>
+```py
+logogame = client.get_game(
+    option=dagpipy.Games.logo_guessing
+)
+
+print(logogame.question)
+print(logogame.answer)
+print(logogame.brand)
+print(logogame.difficulty)
+print(logogame.wiki)
+```
+
+## <em>class</em> dagpipy.Roast
+The object returned when using [Games.roast](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#roast) as the option param in [Client.get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption)
+
+**Supported Operations:**<br>
+str(x): Returns the roast
+
+### roast
+Returns a random roast
+
+**Type:**<br>
+str
+
+**Example:**<br>
+```py
+roast = client.get_game(
+    option=dagpipy.Games.roast
+)
+
+print(roast.roast)
+```
+
+## <em>class</em> dagpipy.YoMama
+The object returned when using [Games.yo_mama](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#yo_mama) as the option param in [Client.get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption)
+
+**Supported Operations:**<br>
+str(x): Returns the yo mama joke
+
+### description
+Returns a random yo mama joke
+
+**Type:**<br>
+str
+
+**Example:**<br>
+```py
+yomama = client.get_game(
+    option=dagpipy.Games.yo_mama
+)
+
+print(yomama.description)
+```
+
+## <em>class</em> dagpipy.PickupLine
+The object returned when using [Games.pickupline](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#pickupline) as the option param in [Client.get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption). Warning: has a high chance to be NSFW
+
+**Supported Operations:**<br>
+str(x): Returns the pick up line
+
+### category
+Returns the category of the joke
+
+**Type:**<br>
+str
+
+### joke
+Returns the pick up line
+
+**Type:**<br>
+str
+
+**Example:**<br>
+```py
+pickup = client.get_game(
+    option=dagpipy.Games.pickupline
+)
+
+print(pickup.category)
+print(pickup.joke)
+```
+
+## <em>class</em> dagpipy.Joke
+The object returned when using [Games.joke](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#joke) as the option param in [Client.get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption). Warning: has a chance to be NSFW
+
+**Supported Operations:**<br>
+str(x): Returns the joke
+
+### id
+Returns the id of the joke
+
+**Type:**<br>
+int
+
+### joke
+Returns the joke
+
+**Type:**<br>
+str
+
+
+**Example:**<br>
+```py
+joke = client.get_game(
+    option=dagpipy.Games.joke
+)
+
+print(joke.id)
+print(joke.joke)
+```
+## <em>class</em> dagpipy.Waifu
+The object returned when using [Games.waifu](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#waifu) as the option param in [Client.get_game](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_gameoption).
+
+**Supported Operations:**
+str(x): Returns the name and description of the waifu.
+
+### age
+Returns the age of the waifu
+
+### birthday_day
+Returns the birthday day of the waifu
+
+### birthday_month
+Returns the birthday month of the waifu
+
+### blood_type
+Returns the blood type of the waifu
+
+### bust
+Returns the bust of the waifu
+
+### description
+Returns the description of the waifu
+
+### display_picture
+Returns the display picture of the waifu
+
+### height
+Returns the height of the waifu
+
+### hip
+Returns the hip of the waifu
+
+### husbando
+Returns the husbando of the waifu
+
+### id
+Returns the id of the waifu
+
+### like rank
+Returns the like rank of the waifu
+
+### likes
+Returns the likes of the waifu
+
+### name
+Returns the name of the waifu
+
+### nsfw
+Returns if the waifu is nsfw 
+
+### origin
+Returns the origin of the waifu
+
+### original_name
+Returns the original name of the waifu
+
+### popularity_rank
+Returns the popularity rank of the waifu
+
+### romaji_name
+Returns the romaji name of the waifu
+
+### slug
+Returns the slug of the waifu
+
+### tags
+Returns the tags of the waifu
+
+### trash
+Returns the trash of the waifu
+
+### trash_rank
+Returns the trash rank of the waifu
+
+### url
+Returns the url of the waifu
+
+### waist
+Returns the waist of the waifu
+
+### weight
+Returns the weight of the waifu
+
+### creator
+Returns the creator of the waifu
+
+**Type:**<br>
+[dagpipy.Creator]()
+
+### series
+Returns the series of the waifu
+
+**Type:**<br>
+[dagpipy.Series]()
+
+### series
+Returns a list of series the waifu was in
+
+**Type:**<br>
+List\[[dagpipy.Series]()]
+
+## <em>class</em> dagpipy.Series
+
+**Supported Operations:**<br>
+str(x): Returns the name of the series
+
+### airing_start
+Returns the start of the airing of the series
+
+**Type:**<br>
+str
+
+### airing_end
+Returns the start of the airing of the series
+
+**Type:**<br>
+str
+
+### description
+Returns the description of the series
+
+**Type:**<br>
+str
+
+### display_picture
+Returns the display picture of the series
+
+**Type:**<br>
+str
+
+### name
+Returns the name of the series
+
+**Type:**<br>
+str
+
+### original_name
+Returns the original name of the series
+
+**Type:**<br>
+str
+
+### release
+Returns the release of the series
+
+**Type:**<br>
+str
+
+### romaji_name
+Returns the romaji name of the series
+
+**Type:**<br>
+str
+
+### slug
+Returns the slug of the series
+
+**Type:**<br>
+str
+
+### studio
+Returns the studio of the series
+
+**Type:**<br>
+str
+
+## <em>class</em> dagpipy.Creator
+The creator of a given waifu
+
+**Supported Operations:**<br>
+str(x): Returns the creator's name
+
+### name 
+The name of the creator
+
+### id
+The id of the creator
