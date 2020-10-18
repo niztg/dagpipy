@@ -77,7 +77,7 @@ whyareyougay_image.show()
 Get an object from the Data API
 
 **Parameters:**<br>
-`option` ([Games]()): The object you want to retrieve. 
+`option` ([Games](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#class-dagpipygames)): The object you want to retrieve. 
 
 **Return type:**<br>
 Union\[[Pokemon](), [LogoGame](), [Roast](), [YoMama](), [PickupLine](), [Joke](), [Waifu]()]
