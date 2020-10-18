@@ -139,221 +139,70 @@ Class that validates image urls.
 ## <em>class</em> dagpipy.ImageOptions
 The `option` param used in the [Client.get_image](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#get_imageoption-url-kwargs) function.
 
-### wanted
-For a wanted image
+### pixel
+Pixelate an image
 
 **Example:**
 ```py
-client.get_image(
+image = client.get_image(
+    option=dagpipy.ImageOptions.pixel,
+    url=url
+)
+```
+
+### colors/colours
+Get an images top 5 colours
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.colours,
+    url=url
+)
+```
+
+### wanted
+Get a wanted poster of an image
+
+**Example:**
+```py
+image = client.get_image(
     option=dagpipy.ImageOptions.wanted,
     url=url
 )
 ```
 
-### tweet
-For a tweet image
+### triggered
+Get a triggered gif of an image
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.tweet,
+image = client.get_image(
+    option=dagpipy.ImageOptions.triggerd,
+    url=url
+)
+```
+
+### wasted
+Get a GTA V wasted screen of an image
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.wasted,
+    url=url
+)
+```
+
+### five_guys_one_girl
+This meme
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.five_guys_one_girl,
     url=url,
-    username='example username',
-    text='cool tweet'
-)
-```
-
-### quote
-For a quote image
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.quote,
-    url=url,
-    name='example username',
-    text='cool quote'
-)
-```
-
-### thought_image
-For a thought image
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.thought_image,
-    url=url,
-#    name='example username',
-#    text='cool quote'
-)
-```
-
-### obama
-For the Obama Meme image
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.obama,
-    url=url
-)
-```
-
-### bad
-For a bad boy >:(
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.bad,
-    url=url
-)
-```
-
-### hitler
-Worse than hitler!
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.hitler,
-    url=url
-)
-```
-
-### angel
-An angel
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.angel,
-    url=url
-)
-```
-
-
-### trash
-POV: You
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.trash,
-    url=url
-)
-```
-
-
-### satan
-el diablo
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.satan,
-    url=url
-)
-```
-
-### sobel
-Idk what this means
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.sobel,
-    url=url
-)
-```
-
-### hogend
-Idk what this means either
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.hogend,
-    url=url
-)
-```
-
-### paint
-Paint on something
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.paint,
-    url=url
-)
-```
-
-### night
-Scary darkness
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.night,
-    url=url
-)
-```
-
-### polaroid
-Polaroid
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.polaroid,
-    url=url
-)
-```
-
-### solar
-sunlight
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.solar,
-    url=url
-)
-```
-
-
-### edge
-edgy
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.edge,
-    url=url
-)
-```
-
-### evil
-Eeeevil
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.evil,
-    url=url
-)
-```
-
-### blur
-Blurify an image
-
-**Example:**
-```py
-client.get_image(
-    option=dagpipy.ImageOptions.blur,
-    url=url
+    url2=url2
 )
 ```
 
@@ -362,154 +211,322 @@ Invert an image
 
 **Example:**
 ```py
-client.get_image(
+image = client.get_image(
     option=dagpipy.ImageOptions.invert,
     url=url
 )
 ```
 
-### pixel
-Pixelate an image
+### sobel
+Sobel filter on an image
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.pixel,
+image = client.get_image(
+    option=dagpipy.ImageOptions.sobel,
     url=url
 )
 ```
 
-### ascii
-Ascii-fy an image
+### hog
+Histogram of Oriented Gradients
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.ascii,
+image = client.get_image(
+    option=dagpipy.ImageOptions.hog,
     url=url
 )
 ```
 
-### deepfry
-🅱
+### blur
+Blurs an image
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.deepfry,
+image = client.get_image(
+    option=dagpipy.ImageOptions.blur,
     url=url
 )
 ```
 
-### sepia
-Make an image into sepia
+### rgb
+Get rgb information of an image
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.deepfry,
+image = client.get_image(
+    option=dagpipy.ImageOptions.rgb,
     url=url
 )
 ```
 
-### wasted
-Duhduh wasteeed
+### angel
+Make an image angelic
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.wasted,
+image = client.get_image(
+    option=dagpipy.ImageOptions.angel,
     url=url
 )
 ```
 
-### triggered
-Brrrr
+### satan
+Make an image the devil
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.triggered,
+image = client.get_image(
+    option=dagpipy.ImageOptions.satan,
+    url=url
+)
+```
+
+### hitler
+Make an image as bad as Hitler!
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.hitler,
+    url=url
+)
+```
+
+### obama
+Make an image into Obama awarding himself
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.obama,
+    url=url
+)
+```
+
+### bad
+Bad boy!
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.bad,
+    url=url
+)
+```
+
+### sith
+Laughs in sithlord
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.sith,
+    url=url
+)
+```
+
+### sith
+Laughs in sithlord
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.sith,
     url=url
 )
 ```
 
 ### jail
-Criminal
+Put an image in jail
 
 **Example:**
 ```py
-client.get_image(
+image = client.get_image(
     option=dagpipy.ImageOptions.jail,
     url=url
 )
 ```
 
 ### gay
-🏳️‍🌈
+Make an image gay
 
 **Example:**
 ```py
-client.get_image(
+image = client.get_image(
     option=dagpipy.ImageOptions.gay,
     url=url
 )
 ```
 
-### jail
-Criminal
+### trash
+Make an image trash
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.jail,
+image = client.get_image(
+    option=dagpipy.ImageOptions.trash,
     url=url
 )
 ```
 
-### colours/colors
-Colours
+### deepfry
+Deepfries an image
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.colours,
+image = client.get_image(
+    option=dagpipy.ImageOptions.deepfry,
     url=url
 )
 ```
 
-### rgb_data
-Get the rgb data of an image
+### ascii
+Ascii-fies an image
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.rgb_data,
+image = client.get_image(
+    option=dagpipy.ImageOptions.ascii,
     url=url
 )
 ```
 
-### whyareyougay
-Why are you gay image
+### charcoal
+Turns an image into a charcoal sketch
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.whyareryougay,
+image = client.get_image(
+    option=dagpipy.ImageOptions.charcoal,
+    url=url
+)
+```
+
+### poster
+Posterizes an image
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.poster,
+    url=url
+)
+```
+
+### sepia
+Makes the image in sepia tone
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.sepia,
+    url=url
+)
+```
+
+### polaroid
+Makes a polaroid of an image
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.polaroid,
+    url=url
+)
+```
+
+### swirl
+Swirls an image
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.swirl,
+    url=url
+)
+```
+
+### swirl
+Swirls an image
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.swirl,
+    url=url
+)
+```
+
+### paint
+Turns an image into an oil painting
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.paint,
+    url=url
+)
+```
+
+### night
+Turns day into night in an image
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.night,
+    url=url
+)
+```
+
+### solar
+Solarizes an image
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.solar,
+    url=url
+)
+```
+
+### thought_image
+Makes an image and text into a thought
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.thought_image,
     url=url,
-    url2=url
+    text='Hmm yes thinking'
 )
 ```
 
-### five_guys_one_girl
-this meme
+### tweet
+Generates a fake tweet
 
 **Example:**
 ```py
-client.get_image(
-    option=dagpipy.ImageOptions.five_guys_one_girl,
+image = client.get_image(
+    option=dagpipy.ImageOptions.tweet,
     url=url,
-    url2=url
+    username='Tweeter Expert',
+    text='tweet'
+)
+```
+
+### discord
+Generates a a discord quote
+
+**Example:**
+```py
+image = client.get_image(
+    option=dagpipy.ImageOptions.tweet,
+    url=url,
+    username='discord user',
+    text='lmao discord'
 )
 ```
 
