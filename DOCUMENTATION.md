@@ -4,7 +4,7 @@ A Python API Wrapper for https://dagpi.xyz/, the fast and free image API.
 #### Table of Contents:
 - [Client](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#client)
 - [ImageURL](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#imageurl)
-- [Enums]()
+- [Enums](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md#enums)
 - [Objects]()
 - [Exceptions]()
 
@@ -116,11 +116,3 @@ Class that validates image urls.
 
 **Raises:**<br>
 [InvalidImageURL](): When the image url you passed in was invalid.
-
-<hr>
-
-# Enums
-
-<h2><em>class</em> dagpipy.ImageOptions</h2>
-The option param used in the [Client.get_image]() function.
-
