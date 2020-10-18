@@ -921,6 +921,21 @@ Returns a list of series the waifu was in
 **Type:**<br>
 List\[[dagpipy.Series]()]
 
+**Example:**<br>
+```py
+waifu = client.get_game(
+    option=dagpipy.Games.waifu
+)
+
+print(waifu.name)
+print(waifu.description)
+print(waifu.display_picture)
+print(waifu.like_rank)
+print(waifu.creator.name)
+print(waifu.creator.id)
+print(waifu.series.description)
+```
+
 ## <em>class</em> dagpipy.Series
 
 **Supported Operations:**<br>
@@ -997,3 +1012,18 @@ The name of the creator
 
 ### id
 The id of the creator
+
+# Exceptions
+
+## <em>exception</em> dagpipy.InvalidToken
+Raised when the token you pass in is invalid (400)
+
+## <em>exception</em> dagpipy.InvalidArgs
+Raised when invalid arguments are passed in. (413, 422)
+
+## <em>exception</em> dagpipy.ResponseError
+Raised when there's an error with the API or you are being rate limited. (429, 500)
+
+## <em>exception</em> dagpipy.InvalidImageURL
+Raised when you pass in an invalid image url
+
