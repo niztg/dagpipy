@@ -45,10 +45,36 @@ print(wtp.types)
 print(wtp.abilities)
 print(wtp.ascii)
 
+logogame = client.get_game(
+    option=dagpipy.Games.logo_guessing
+)
+
+print(logogame.question)
+print(logogame.answer)
+print(logogame.brand)
+print(logogame.difficulty)
+print(logogame.wiki)
+
+roast = client.get_game(
+    option=dagpipy.Games.roast
+)
+
+print(roast.roast)
+
 joke = client.get_game(
     option=dagpipy.Games.joke
 )
 print(joke.id)
 print(joke.joke)
 
-print(client.get_game(option=dagpipy.Games.waifu).appearances)
+waifu = client.get_game(
+    option=dagpipy.Games.waifu
+)
+
+print(waifu.name)
+print(waifu.description)
+print(waifu.display_picture)
+print(waifu.like_rank)
+print(waifu.creator.name)
+print(waifu.creator.id)
+print(waifu.series.description)

@@ -33,7 +33,7 @@ class LogoGame:
         self.answer = data.get('answer')
         self.question = data.get('question')
         self.brand = data.get('brand')
-        self.wiki = data.get('wiki_url')
+        self.wiki = str(data.get('wiki_url')).replace(" ", "")
         self.hint = data.get('hint')
         self.clue = data.get('clue')
         if data.get('easy'):
@@ -42,7 +42,7 @@ class LogoGame:
             self.difficulty = "hard"
 
     def __repr__(self):
-        return self.question
+        return str(self.data)
 
 
 class Roast:
@@ -72,7 +72,7 @@ class PickupLine:
 
 class Joke:
     def __init__(self, data: dict):
-        self.id = data.get('id')
+        self.id = int(data.get('id'))
         self.joke = data.get('joke')
 
     def __repr__(self):
@@ -99,7 +99,7 @@ class Series:
 class Creator:
     def __init__(self, data: dict):
         self.name = data.get('name')
-        self.id = data.get('id')
+        self.id = int(data.get('id'))
 
     def __repr__(self):
         return self.name

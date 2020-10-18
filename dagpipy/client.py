@@ -1,4 +1,4 @@
-from typing import Union, Any
+from typing import Union
 
 from requests import get
 from io import BytesIO
@@ -49,7 +49,13 @@ class Client:
     def get_game(
             self,
             option: Games
-    ) -> Any:
+    ) -> Union[Pokemon,
+               LogoGame,
+               Roast,
+               YoMama,
+               PickupLine,
+               Joke,
+               Waifu]:
         response = get(
             url=URL.format(type="data", option=option),
             headers={"Authorization": self.auth}
@@ -59,7 +65,7 @@ class Client:
             raise error
         lookup = {
             "wtp": Pokemon,
-            "logogame": LogoGame,
+            "logo": LogoGame,
             "roast": Roast,
             "yomama": YoMama,
             "pickupline": PickupLine,
