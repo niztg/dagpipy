@@ -144,7 +144,7 @@ Pixelate an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.pixel,
     url=url
 )
@@ -155,7 +155,7 @@ Get an images top 5 colours
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.colours,
     url=url
 )
@@ -166,7 +166,7 @@ Get a wanted poster of an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.wanted,
     url=url
 )
@@ -177,7 +177,7 @@ Get a triggered gif of an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.triggerd,
     url=url
 )
@@ -188,7 +188,7 @@ Get a GTA V wasted screen of an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.wasted,
     url=url
 )
@@ -199,7 +199,7 @@ This meme
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.five_guys_one_girl,
     url=url,
     url2=url2
@@ -211,7 +211,7 @@ You are gay
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.whyareyougay,
     url=url,
     url2=url2
@@ -224,7 +224,7 @@ Invert an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.invert,
     url=url
 )
@@ -235,7 +235,7 @@ Sobel filter on an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.sobel,
     url=url
 )
@@ -246,7 +246,7 @@ Histogram of Oriented Gradients
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.hog,
     url=url
 )
@@ -257,7 +257,7 @@ Blurs an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.blur,
     url=url
 )
@@ -268,7 +268,7 @@ Get rgb information of an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.rgb,
     url=url
 )
@@ -279,7 +279,7 @@ Make an image angelic
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.angel,
     url=url
 )
@@ -290,7 +290,7 @@ Make an image the devil
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.satan,
     url=url
 )
@@ -301,7 +301,7 @@ Make an image as bad as Hitler!
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.hitler,
     url=url
 )
@@ -312,7 +312,7 @@ Make an image into Obama awarding himself
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.obama,
     url=url
 )
@@ -323,7 +323,7 @@ Bad boy!
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.bad,
     url=url
 )
@@ -334,7 +334,7 @@ Laughs in sithlord
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.sith,
     url=url
 )
@@ -345,7 +345,7 @@ Laughs in sithlord
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.sith,
     url=url
 )
@@ -356,7 +356,7 @@ Put an image in jail
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.jail,
     url=url
 )
@@ -367,7 +367,7 @@ Make an image gay
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.gay,
     url=url
 )
@@ -378,7 +378,7 @@ Make an image trash
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.trash,
     url=url
 )
@@ -389,7 +389,7 @@ Deepfries an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.deepfry,
     url=url
 )
@@ -400,7 +400,7 @@ Ascii-fies an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.ascii,
     url=url
 )
@@ -411,7 +411,7 @@ Turns an image into a charcoal sketch
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.charcoal,
     url=url
 )
@@ -422,7 +422,7 @@ Posterizes an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.poster,
     url=url
 )
@@ -433,7 +433,7 @@ Makes the image in sepia tone
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.sepia,
     url=url
 )
@@ -444,7 +444,7 @@ Makes a polaroid of an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.polaroid,
     url=url
 )
@@ -455,7 +455,7 @@ Swirls an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.swirl,
     url=url
 )
@@ -466,7 +466,7 @@ Swirls an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.swirl,
     url=url
 )
@@ -477,7 +477,7 @@ Turns an image into an oil painting
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.paint,
     url=url
 )
@@ -488,7 +488,7 @@ Turns day into night in an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.night,
     url=url
 )
@@ -499,7 +499,7 @@ Solarizes an image
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.solar,
     url=url
 )
@@ -510,7 +510,7 @@ Makes an image and text into a thought
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.thought_image,
     url=url,
     text='Hmm yes thinking'
@@ -522,7 +522,7 @@ Generates a fake tweet
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.tweet,
     url=url,
     username='Tweeter Expert',
@@ -535,7 +535,7 @@ Generates a a discord quote
 
 **Example:**
 ```py
-image = client.get_image(
+client.get_image(
     option=dagpipy.ImageOptions.tweet,
     url=url,
     username='discord user',
@@ -552,7 +552,7 @@ Returns the [Pokemon](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION
 **Example:**
 ```py
 client.get_game(
-    option=dagpipy.ImageOptions.whos_that_pokemon,
+    option=dagpipy.Games.whos_that_pokemon,
 )
 ```
 
@@ -562,7 +562,7 @@ Returns the [LogoGame](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATIO
 **Example:**
 ```py
 client.get_game(
-    option=dagpipy.ImageOptions.logo_guessing,
+    option=dagpipy.Games.logo_guessing,
 )
 ```
 
@@ -572,7 +572,7 @@ Returns the [Roast](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.m
 **Example:**
 ```py
 client.get_game(
-    option=dagpipy.ImageOptions.roast,
+    option=dagpipy.Games.roast,
 )
 ```
 
@@ -583,7 +583,7 @@ Returns the [YoMama](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.
 **Example:**
 ```py
 client.get_game(
-    option=dagpipy.ImageOptions.yo_mama,
+    option=dagpipy.Games.yo_mama,
 )
 ```
 
@@ -593,7 +593,7 @@ Returns the [PickupLine](https://github.com/niztg/dagpipy/blob/master/DOCUMENTAT
 **Example:**
 ```py
 client.get_game(
-    option=dagpipy.ImageOptions.pickupline,
+    option=dagpipy.Games.pickupline,
 )
 ```
 
@@ -603,7 +603,7 @@ Returns the [Waifu](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.m
 **Example:**
 ```py
 client.get_game(
-    option=dagpipy.ImageOptions.waifu,
+    option=dagpipy.Games.waifu,
 )
 ```
 
@@ -614,7 +614,7 @@ Returns the [Joke](https://github.com/niztg/dagpipy/blob/master/DOCUMENTATION.md
 **Example:**
 ```py
 client.get_game(
-    option=dagpipy.ImageOptions.joke,
+    option=dagpipy.Games.joke,
 )
 ```
 
